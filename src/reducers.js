@@ -1,10 +1,11 @@
-import { SEARCH, SELECT, RESULTS } from "./actions";
+import { SEARCH, SELECT, RESULTS, LOADING } from "./actions";
 
 import axios from 'axios';
 
 const defaultState = {
     query: '',
-    results: []
+    results: [],
+    isLoading: false
 }
 export function art(state=defaultState, action) {
     switch(action.type) {
@@ -21,9 +22,15 @@ export function art(state=defaultState, action) {
                 reults: action.payload.results
             }
             break;
+        case LOADING:
+            return {
+                ...state,
+                isLoading: action.payload.isLoading
+            }
         case SELECT:
             return {
                 ...state,
             }
+        
     }
 }
