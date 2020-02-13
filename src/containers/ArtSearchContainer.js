@@ -10,3 +10,6 @@ function mapDispatchToProps(dispatch){
         }
     }
 }
+
+const reduxConnector = connect(null, mapDispatchToProps);
+export default reduxConnector(ArtSearch);
