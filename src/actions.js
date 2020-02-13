@@ -1,5 +1,16 @@
 export const SEARCH = 'SEARCH';
 export const SELECT = 'SELECT';
+export const RESULTS = 'RESULTS';
+
+
+export function actionResults(results){
+    return {
+        type: RESULTS,
+        payload: {
+            results
+        }
+    }
+}
 
 export function actionSearch(query) {
     return {

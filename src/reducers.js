@@ -1,4 +1,4 @@
-import { SEARCH, SELECT } from "./actions";
+import { SEARCH, SELECT, RESULTS } from "./actions";
 
 import axios from 'axios';
 
@@ -13,6 +13,12 @@ export function art(state=defaultState, action) {
                 ...state,
                 query: action.payload.query,
                 results: action.payload.results
+            }
+            break;
+        case RESULTS:
+            return {
+                ...state,
+                reults: action.payload.results
             }
             break;
         case SELECT:
