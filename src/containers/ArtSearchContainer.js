@@ -9,7 +9,7 @@ function mapDispatchToProps(dispatch){
             const results = await Axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers');
             console.log(results);
             dispatch(actionSearch('sunflowers'));
-            dispatch(actionResults(results.data));
+            dispatch(actionResults(results.data.objectIDs));
         }
     }
 }
